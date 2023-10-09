@@ -1,12 +1,12 @@
 import readline from "readline";
 import env from "dotenv";
 import service from "./services/services.js";
+env.config();
 const rdl = readline.createInterface({
   input: process.stdin,
   output: process.stdout,
 });
 
-env.config();
 
 const ask = () => {
   rdl.question("Recipient Email: ", (email) => {
