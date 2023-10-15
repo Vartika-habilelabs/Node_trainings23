@@ -1,11 +1,17 @@
-
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const env=require('dotenv');
-env.config();
-router.get("/",(req,res)=>{
-  res.render('index',{title:'Welcome',
-port:process.env.PORT})
-})
+const authorization = require("../middleware/authentication");
+const { signup, login } = require("../controller/userController");
 
-module.exports=router;
+router.get("/", (req, res) => {
+  res.render("index", { title: "Welcome", port: process.env.PORT });
+});
+
+router.post("/signup", signup);
+
+router.post("/login", login);
+
+router.get("/protected", authorization, (req, res) => {
+  res.send("hi");
+});
+module.exports = router;

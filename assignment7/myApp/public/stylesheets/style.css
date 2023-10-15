@@ -40,11 +40,26 @@ input{
   border-radius: 2rem;
   padding:1rem 2rem;
 }
-button{
+.homebtn,.searchbtn{
   font-size: 1.5rem;
   border-radius: 1.5rem;
   background-color: aliceblue;
   height:80%;
   border: 1px solid grey;
  
+}
+.movie_list{
+  display: flex;
+  flex-direction: column;
+  gap:2rem;
+}
+.detail{
+  display: flex;
+  gap:1rem;
+  justify-content: space-between;
+  max-width: 45vw;
+}
+.img{
+  width:15rem;
+  height:15rem;
 }

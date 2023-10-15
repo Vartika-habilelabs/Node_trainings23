@@ -10,9 +10,10 @@ const rdl = readline.createInterface({
 
 const ask = () => {
   rdl.question("Recipient Email: ", (email) => {
-    if (!email) {
+
+    if (email.length===0) {
       console.log("please enter email");
-      ask();
+      rdl.close();
     } else {
       rdl.question("Subject: ", (subject) => {
         rdl.question("Message: ", (message) => {

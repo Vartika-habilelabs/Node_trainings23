@@ -1,12 +1,40 @@
-<h1>Search your {{title}} here</h1>
-
+{{!-- <h1>Search your {{title}} here</h1>
 
 <div class="container">
-    <div class="search">
-        <input type="text" id="searchInput" name="searchQuery" placeholder="Movie name" />
-        <button class="searchbtn">Search</button>
-    </div>
-    <div class="result"></div>
-    
+  <div class="search">
+    <input
+      type="text"
+      id="searchInput"
+      name="searchQuery"
+      placeholder="Movie name"
+    />
+    <button class="searchbtn">Search</button>
+  </div>
+  <div class="result"></div>
 
 </div>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="/javascripts/index.js"> --}}
+
+  <form action="/movies/search" method="POST">
+    <input id="title" type="text" placeholder="Search here" name="title"></input>
+    <button type="submit">Search</button>
+    </form>
+
+  
+
+{{#if movieSearch}}
+{{#if movies.length}}
+<h1>{{title}}</h1>
+ <div class="movie_list">
+    {{#each movies}}
+      <div class="detail">
+        <h2>{{this.Title}}</h2>
+        <img class="img"src={{this.Poster}}/>
+      </div>
+    {{/each}}
+  </div>
+{{else}}
+  <h3>No movies found</h3>
+{{/if}}
+{{/if}}

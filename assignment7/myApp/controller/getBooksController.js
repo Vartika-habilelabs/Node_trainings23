@@ -1,4 +1,4 @@
-const Book=require('../db/schema');
+const Book=require('../db/schemas/bookSchema');
 
 const getAllBooks=async(req,res)=>{
     try {
