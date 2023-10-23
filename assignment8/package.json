@@ -1,0 +1,23 @@
+{
+  "name": "node_trainings",
+  "version": "1.0.0",
+  "description": "",
+  "main": "donors-scrap.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vdhabile14/Node_trainings_assignment1.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vdhabile14/Node_trainings_assignment1/issues"
+  },
+  "homepage": "https://github.com/vdhabile14/Node_trainings_assignment1#readme",
+  "dependencies": {
+    "puppeteer": "^21.3.8",
+    "xlsx": "^0.18.5"
+  }
+}

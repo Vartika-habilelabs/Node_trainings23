@@ -6,6 +6,7 @@ const {
   getAllBooksbyNameandAuthor,
   createNewBook,
   updateBookById,
+  deleteBook,
 } = require("../controller/getBooksController");
 const authorization = require("../middleware/authentication");
 
@@ -15,8 +16,10 @@ router.get("/:name/:author", authorization, getAllBooksbyNameandAuthor);
 
 router.get("/:id", authorization, getBookById);
 
-router.post("/", authorization, createNewBook);
+router.post("/createbook", authorization, createNewBook);
 
-router.put("/:id", authorization, updateBookById);
+router.put("/update/:id", authorization, updateBookById);
+
+router.delete("/delete/:id", authorization, deleteBook);
 
 module.exports = router;

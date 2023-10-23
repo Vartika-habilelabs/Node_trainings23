@@ -41,12 +41,12 @@ const login = async (req, res) => {
 
       if (unHashPassword === password) {
         const token = jwt.sign({ _id: savedUser._id }, process.env.SECRETKEY);
-        res.send(token);
+        res.send({authToken: token});
       } else {
         return res.status(422).send("Invalid Password");
       }
     } else {
-      return res.status(422).send("Invalid email");
+      return res.status(422).send("Invalid email or you can signup instead");
     }
   } catch (error) {
     console.log(error);
